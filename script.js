@@ -66,8 +66,16 @@ const months = {
 // in the html.
 $('#currentDay').text(days[day]+ ', ' + months[month]+' '+currentDate+abr);
 $(function () {
+  const timeblocks = $('.container-lg').children();
+  //loop over timeblocks
+  for(let i = 0; i<timeblocks.length; i++){
+    //get id atr 
+    // let currentId = timeblocks[i].attr('id');
+   
+    //compare to current time
+    //update class
 
-  console.log(hour);
+  }
   
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
