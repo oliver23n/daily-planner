@@ -70,10 +70,16 @@ $(function () {
   //loop over timeblocks
   for(let i = 0; i<timeblocks.length; i++){
     //get id atr 
-    // let currentId = timeblocks[i].attr('id');
-   
-    //compare to current time
-    //update class
+     let currentId = $(timeblocks[i]).attr('id');
+     //compare to current time
+     //update class
+     if(currentId<hour){
+       $(timeblocks[i]).addClass('past');
+     }else if (currentId == hour){
+       $(timeblocks[i]).addClass('present');
+     }else{
+       $(timeblocks[i]).addClass('future');
+     }
 
   }
   
