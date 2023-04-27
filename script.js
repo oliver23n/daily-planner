@@ -68,7 +68,7 @@ const months = {
 //display current date 
 $('#currentDay').text(days[day]+ ', ' + months[month]+' '+currentDate+abr+' '+year);
 $(function () {
-
+  let textSaved = [];
   const timeblocks = $('.container-lg').children('div');
   //loop over timeblocks
   for(let i = 0; i<timeblocks.length; i++){
@@ -90,12 +90,26 @@ $(function () {
 
   // click to save to local storage
   $('.container-lg').on('click','.saveBtn',function(){
-    console.log($(this).parent())
-    
-    
+    //get the id of the div clicked
+    const theId = $(this).parent().attr('id');
+    //get the text from text area
+    const text = $(this).parent().children('.description').val();
+    //store the id and the text in object 
+    const currentText = {
+      // id:  text:
+      id: theId,
+      t: text.trim()
+    }
+    //store
+    textSaved.push(currentText);
+    //store to local 
+    console.log(textSaved)
+    localStorage.setItem("stored",JSON.stringify(textSaved));
   })
 
   function render(){
+    //check if local is empty
+    //if not show all the text to coresponding div
 
   }
 
