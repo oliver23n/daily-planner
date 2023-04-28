@@ -1,18 +1,27 @@
 
-
 let today = dayjs();
 let hour = today.format('HH');
-let currentDate = dayjs('04-21-2023');
-
-console.log(currentDate.format('Do'))
-
-
-
+let currentDate = today.format('D');
+let abr = '';
+switch(currentDate){
+  case 1:
+  case 21:
+  case 31:
+    abr = 'st';
+    break;
+  case 2:
+  case 22:
+    abr = 'nd';
+    break; 
+  default:
+    abr = 'th'  
+};
 
 //display current date 
-$('#currentDay').text(today.format('dddd, MMMM Do YYYY'));
+$('#currentDay').text(today.format(`dddd, MMMM D`)+abr);
 
 $(function () {
+  
   let textSaved = [];
   const timeblocks = $('.container-lg').children('div');
   //loop over timeblocks
