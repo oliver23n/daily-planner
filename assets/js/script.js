@@ -12,6 +12,10 @@ switch(currentDate){
   case 2:
   case 22:
     abr = 'nd';
+    break;
+  case 3:
+  case 23:
+    abr = 'rd';
     break; 
   default:
     abr = 'th'  
@@ -74,7 +78,6 @@ $(function () {
         let id = current.id;
         //place using id to coresponding timeblock
         $('#' + id).children('.description').val(current.t);
-        console.log($('#' + id));
       }
     }
   }
