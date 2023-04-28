@@ -14,6 +14,8 @@ N/A
 
 ## Usage
 
+Link to deployed app: https://oliver23n.github.io/daily-planner/
+
 ![Screenshot preview of the app](./assets/images/screenshot.png)
 
 ## Credits
