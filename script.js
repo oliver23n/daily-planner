@@ -1,51 +1,11 @@
 
 
-let date = new Date();
-let time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-let hour = date.getHours();
-let month = date.getMonth();
-let day = date.getUTCDay();
-let currentDate = date.getUTCDate();
-let year = date.getFullYear();
-let abr = '';
+let today = dayjs();
+let hour = today.format('hh');
+let currentDate = dayjs('04-21-2023');
 
 
-switch (currentDate){
-  case 1:
-  case 21:
-  case 31:
-    abr = 'st';
-    break;
-  case 2:
-  case 22:
-    abr ='nd'
-    break;
-  default:
-    abr='th'
-};
-const days = {
-  1:'Monday',
-  2:'Tuesday',
-  3:'Wednesday',
-  4:'Thursday',
-  5:'Friday',
-  6:'Saturday',
-  7:'Sunday'
-};
-const months = {
-  0:'January',
-  1:'February',
-  2:'March',
-  3:'April',
-  4:'May',
-  5:'June',
-  6:'July',
-  7:'August',
-  8:'September',
-  9:'October',
-  10:'November',
-  11:'December'
-};
+console.log(currentDate.format('Do'))
 
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
@@ -66,7 +26,7 @@ const months = {
 // in the html.
 
 //display current date 
-$('#currentDay').text(days[day]+ ', ' + months[month]+' '+currentDate+abr+' '+year);
+$('#currentDay').text(today.format('dddd, MMMM Do YYYY'));
 $(function () {
   let textSaved = [];
   const timeblocks = $('.container-lg').children('div');
