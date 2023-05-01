@@ -4,17 +4,17 @@ let hour = today.format('HH');
 let currentDate = today.format('D');
 let abr = '';
 switch(currentDate){
-  case 1:
-  case 21:
-  case 31:
+  case '1':
+  case '21':
+  case '31':
     abr = 'st';
     break;
-  case 2:
-  case 22:
+  case '2':
+  case '22':
     abr = 'nd';
-    break;
-  case 3:
-  case 23:
+    break; 
+  case '3':
+  case '23':
     abr = 'rd';
     break; 
   default:
@@ -23,7 +23,6 @@ switch(currentDate){
 
 //display current date 
 $('#currentDay').text(today.format(`dddd, MMMM D`)+abr);
-
 $(function () {
   
   let textSaved = [];
